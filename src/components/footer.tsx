@@ -114,7 +114,7 @@ export const Footer: React.FC = () => {
     }, [lang]);
 
     const syncCurrentTime = useCallback(() => {
-        currentTimePubSub.pub(audioRef.currentTime);
+        currentTimePubSub.pub(audioRef.currentTime); // always pub？
         rafId.current = requestAnimationFrame(syncCurrentTime);
     }, []);
 
@@ -143,7 +143,7 @@ export const Footer: React.FC = () => {
     }, []);
 
     const onAudioTimeUpdate = useCallback(() => {
-        if (audioRef.paused) {
+        if (audioRef.paused) { // 只有暂停时候才发？
             currentTimePubSub.pub(audioRef.currentTime);
         }
     }, []);
@@ -175,6 +175,7 @@ export const Footer: React.FC = () => {
             <audio
                 ref={audioRef}
                 src={audioSrc}
+                muted
                 controls={prefState.builtInAudio}
                 hidden={!prefState.builtInAudio}
                 onLoadedMetadata={onAudioLoadedMetadata}
@@ -196,6 +197,11 @@ const receiveFile = (file: File, setAudioSrc: TsetAudioSrc): void => {
     sessionStorage.removeItem(SSK.audioSrc);
 
     if (file) {
+        audioStatePubSub.pub({
+            type: AudioActionType.audioReady,
+            payload: URL.createObjectURL(file),
+        });
+        
         if (file.type.startsWith("audio/")) {
             setAudioSrc(URL.createObjectURL(file));
             return;

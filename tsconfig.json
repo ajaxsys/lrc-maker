@@ -12,6 +12,7 @@
         "moduleResolution": "node",
         "sourceMap": true,
         "incremental": true,
+        "allowSyntheticDefaultImports": true,
         "tsBuildInfoFile": "./build/lrc-maker.tsbuildinfo"
     },
     "include": ["src"],

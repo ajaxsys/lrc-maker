@@ -7,6 +7,7 @@ interface IAudioRef extends React.RefObject<HTMLAudioElement> {
     playbackRate: number;
     currentTime: number;
     toggle: () => void;
+    pause: () => void;
 }
 
 export const audioRef: IAudioRef = {
@@ -42,6 +43,11 @@ export const audioRef: IAudioRef = {
         }
     },
 
+    pause() {
+        if (this.current?.duration && this.current.paused) {
+            this.current.pause();
+        }
+    },
     toggle() {
         if (this.current?.duration) {
             this.current.paused ? this.current.play() : this.current.pause();
@@ -53,6 +59,8 @@ export const enum AudioActionType {
     pause,
     getDuration,
     rateChange,
+    timeChange,
+    audioReady,
 }
 
 export type AudioState =
@@ -67,6 +75,14 @@ export type AudioState =
     | {
           type: AudioActionType.rateChange;
           payload: number;
+      }
+    | {
+          type: AudioActionType.timeChange;
+          payload: number;
+      }
+    | {
+          type: AudioActionType.audioReady;
+          payload: any;
       };
 
 export const audioStatePubSub = createPubSub<AudioState>();

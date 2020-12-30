@@ -130,6 +130,8 @@ const Html = async () => {
                 <link rel="mask-icon" href="./favicons/safari-pinned-tab.svg" color="#ff4081" />
                 <link rel="shortcut icon" href="./favicons/favicon.ico" />
 
+                <script src="https://unpkg.com/wavesurfer.js@4.3.0/dist/wavesurfer.js"></script>
+
                 <meta name="application-name" content="灯里的歌词滚动姬" />
                 <meta name="msapplication-TileColor" content="#ffffff" />
                 <meta name="theme-color" content="#484848" />

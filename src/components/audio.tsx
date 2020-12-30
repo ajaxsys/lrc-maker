@@ -1,5 +1,6 @@
 import { convertTimeToTag } from "../lrc-parser.js";
 import { AudioActionType, audioRef, AudioState, audioStatePubSub, currentTimePubSub } from "../utils/audiomodule.js";
+import AudioWave from "./audiowave.js";
 import { loadAudioDialogRef } from "./loadaudio.js";
 import { Forward5sSVG, LoadAudioSVG, PauseSVG, PlaySVG, Replay5sSVG } from "./svg.js";
 
@@ -155,6 +156,47 @@ export const LrcAudio: React.FC<{ lang: Language }> = ({ lang }) => {
 
     const [duration, setDuration] = useState(audioRef.duration);
 
+
+    useEffect(() => {
+
+        console.log('changed time...');
+        // 从波形图上调整时间，也更改隐藏的audio
+        return currentTimePubSub.sub(self.current, (data) => {
+            if (audioRef.currentTime !== data) {
+                console.log('changed time', data);
+                audioRef.currentTime = data;
+            }
+        });
+        // return audioStatePubSub.sub(self.current, (data) => {
+        //     if (data.type === AudioActionType.timeChange) {
+        //         console.log('changed time', data);
+        //         audioRef.currentTime = data.payload;
+
+        //         // // 从波形图上调整时间，也停止隐藏的audio
+        //         // if (!paused) {
+        //         //     onPlayPauseToggle();
+        //         // }
+        //     }
+        // })
+    }, []);
+    
+    useEffect(() => {
+
+        console.log('changed time...');
+        
+        return audioStatePubSub.sub(self.current, (data) => {
+            if (data.type === AudioActionType.timeChange) {
+                console.log('changed time2', data);
+                audioRef.currentTime = data.payload;
+
+                // 从波形图上调整时间，也停止隐藏的audio
+                // if (!paused) {
+                //     onPlayPauseToggle();
+                // }
+            }
+        })
+    }, []);
+    
     useEffect(() => {
         return audioStatePubSub.sub(self.current, (data: AudioState) => {
             switch (data.type) {
@@ -164,6 +206,7 @@ export const LrcAudio: React.FC<{ lang: Language }> = ({ lang }) => {
                     break;
                 }
                 case AudioActionType.pause: {
+                    console.log("xxxxxxxxxxxxxxxxxx", data)
                     setPaused(data.payload);
                     break;
                 }
@@ -172,11 +215,19 @@ export const LrcAudio: React.FC<{ lang: Language }> = ({ lang }) => {
     }, []);
 
     const onReplay5s = useCallback(() => {
-        audioRef.currentTime -= 5;
+        audioRef.currentTime -= 5; // 
+        audioStatePubSub.pub({
+            type: AudioActionType.timeChange, 
+            payload: audioRef.currentTime
+        });
     }, []);
 
     const onForward5s = useCallback(() => {
-        audioRef.currentTime += 5;
+        audioRef.currentTime += 5; // 
+        audioStatePubSub.pub({
+            type: AudioActionType.timeChange, 
+            payload: audioRef.currentTime
+        });
     }, []);
 
     const onPlayPauseToggle = useCallback(() => {
@@ -187,7 +238,9 @@ export const LrcAudio: React.FC<{ lang: Language }> = ({ lang }) => {
         loadAudioDialogRef.open();
     }, []);
 
-    return (
+    return (<>
+        <AudioWave duration={duration} paused={paused} />
+
         <section className={"lrc-audio" + (paused ? "" : " playing")}>
             <button
                 className="ripple glow loadaudio-button"
@@ -211,8 +264,8 @@ export const LrcAudio: React.FC<{ lang: Language }> = ({ lang }) => {
                 <Forward5sSVG />
             </button>
 
-            <TimeLine duration={duration} paused={paused} />
+            {/* <TimeLine duration={duration} paused={paused} /> */}
             <RateSlider lang={lang} />
         </section>
-    );
+    </>);
 };
