@@ -123,16 +123,23 @@ const AudioWave: React.FC<{ duration: number; paused: boolean }> = ({ duration, 
 
     }, []);
 
+    const ajustTime = (time: number | string) => {
+        // 支持手动微调时间
+        const t = Number(time);
+        setCurrentTime(t);
+        currentTimePubSub.pub(t);
+    }
+
     return (
         <>
             
-                <div style={{paddingLeft: '10%', marginBottom: '1rem'}}>
-                    <input type="number" value={currentTime} style={{color: 'white', width: "6rem"}}
+                <div style={{paddingLeft: '0%', marginBottom: '0rem'}}>
+                    <span style={{color: 'white', cursor: 'pointer', padding: '1.5rem'}}
+                        onClick={() => ajustTime(currentTime + 0.1)}>＋0.1s ↑</span>
+                    <br />
+                    <input type="text" value={currentTime} style={{color: 'red', width: "8rem", height: "3rem", padding: "0.5rem", fontSize: "1.4rem"}}
                         onChange={(e) => {
-                            // 支持手动微调时间
-                            const t = Number(e.target.value);
-                            setCurrentTime(t);
-                            currentTimePubSub.pub(t);
+                            ajustTime(e.target.value);
                         }} 
                         // onClick={(e) => e.currentTarget.select()}>
                         >
@@ -143,9 +150,13 @@ const AudioWave: React.FC<{ duration: number; paused: boolean }> = ({ duration, 
                         </CopyToClipboard> 
                         */}
                     </input>
+                    <br />
+                    <span style={{color: 'white', cursor: 'pointer', padding: '1.5rem'}}
+                        onClick={() => ajustTime(currentTime - 0.1)}>ー0.1s ↓</span>
+
                 </div>
             
-            <div id="waveform" style={{marginBottom: '2rem'}}>
+            <div id="waveform" style={{marginBottom: '1rem'}}>
             </div>
         </>
     );

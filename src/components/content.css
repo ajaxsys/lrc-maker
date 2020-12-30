@@ -43,7 +43,7 @@ body,
     width: 80%;
     margin: auto;
     padding-top: 60px;
-    padding-bottom: 32px;
+    padding-bottom: 320px; /*为wave留更多空间*/
 }
 
 @media (max-width: 1280px) {

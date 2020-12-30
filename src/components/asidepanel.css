@@ -2,6 +2,7 @@
     position: fixed;
     right: 0;
     bottom: 200px;
+    z-index: 9999; /*防止wave挡住下载功能*/
     margin-bottom: env(safe-area-inset-bottom);
     background-color: var(--semi-black-color);
     border-radius: 8px 0 0 8px;
