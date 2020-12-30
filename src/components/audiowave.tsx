@@ -10,10 +10,6 @@ const AudioWave: React.FC<{ duration: number; paused: boolean }> = ({ duration, 
     const self = useRef(Symbol(AudioWave.name));
     const [currentTime, setCurrentTime] = useState(0);
 
-    const inputTime = () => {
-        alert('请按空格打轴');
-    }
-
     useEffect(() => {
 
         let wavePlayer: any;
@@ -65,14 +61,17 @@ const AudioWave: React.FC<{ duration: number; paused: boolean }> = ({ duration, 
 
                     // 当波形图被点击调整位置时候
                     wavesurfer.on('seek', ((progress: any) => {
-                        console.log(progress);
+                        // console.log(progress);
                         currTime = audioTimeDuration * progress;
                         // refreshCurrentTime();
                         currentTimePubSub.pub(currTime); // 通知隐藏的那个audio，时间被拖动了
                         
-                        if (!paused) {
+                        if (!isPaused) {
+                            console.log("should play...")
                             wavesurfer.play(); // 防止停止
                         //     audioStatePubSub.pub({type: AudioActionType.pause, payload: true}); // 通知隐藏的那个audio已被暂停
+                        } else {
+                            console.log("Keep paused...")
                         }
                     }));
 
@@ -126,11 +125,17 @@ const AudioWave: React.FC<{ duration: number; paused: boolean }> = ({ duration, 
 
     return (
         <>
-            {
-                currentTime ?
+            
                 <div style={{paddingLeft: '10%', marginBottom: '1rem'}}>
-                    <input value={currentTime} style={{color: 'blue', width: "6rem"}}
-                        onClick={(e) => e.currentTarget.select()}>
+                    <input type="number" value={currentTime} style={{color: 'white', width: "6rem"}}
+                        onChange={(e) => {
+                            // 支持手动微调时间
+                            const t = Number(e.target.value);
+                            setCurrentTime(t);
+                            currentTimePubSub.pub(t);
+                        }} 
+                        // onClick={(e) => e.currentTarget.select()}>
+                        >
                         {/* 
                         <CopyToClipboard text={'' + currentTime}
                             onCopy={() => console.log({copied: true})}>
@@ -138,11 +143,8 @@ const AudioWave: React.FC<{ duration: number; paused: boolean }> = ({ duration, 
                         </CopyToClipboard> 
                         */}
                     </input>
-                    <button style={{color: "white", cursor: "pointer"}} onClick={inputTime}>录入</button>
                 </div>
-                :
-                null 
-            }
+            
             <div id="waveform" style={{marginBottom: '2rem'}}>
             </div>
         </>
