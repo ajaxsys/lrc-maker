@@ -141,7 +141,7 @@
         "signature": "89bf2b7a601b73ea4311eda9c41f86a58994fec1bee3b87c4a14d68d9adcdcbd",
         "affectsGlobalScope": true
       },
-      "../src/languages/en-US.ts": {
+      "../src/languages/en-us.ts": {
         "version": "ad4ab60f93017eb3571a302672e00f792ff9b673b9c23e631f68cb75c0cf5c66",
         "signature": "86efeb93caebf448f4ece0fa791f8b985e25ae5e7642aa12f6c4b8537e65b708",
         "affectsGlobalScope": false
@@ -151,12 +151,12 @@
         "signature": "1fa8d350eef6d51f426e3df2225ad3bd3d8e66244667a665c07ad56747395014",
         "affectsGlobalScope": true
       },
-      "../src/hooks/useLang.ts": {
+      "../src/hooks/uselang.ts": {
         "version": "4d335a875d89edb7cfb13f13e6867e90d7c95d6d11690d150b6d74c17769a0de",
         "signature": "e56eff5920979b4565a1f0b13ac9bf8c7bc084f7ab2816ce08fe97a8188a812b",
         "affectsGlobalScope": false
       },
-      "../src/hooks/usePref.ts": {
+      "../src/hooks/usepref.ts": {
         "version": "bb52a1293f69e9ee19f2cea272990f07d041fcad3043a7b68379820371b207da",
         "signature": "4b6edb845b3a7475e6062f941e5af1dba8209ca5a39847d99329f26ed0b10e97",
         "affectsGlobalScope": false
@@ -191,14 +191,14 @@
         "signature": "a8936f1ed39d68d32f4cb427a1498f7314b9d9757b180fea2a7de0e93db8c335",
         "affectsGlobalScope": false
       },
-      "../src/hooks/useLrc.ts": {
+      "../src/hooks/uselrc.ts": {
         "version": "5528d00c17114dd0e2b4e3722261f1283485a6d29f53d198bedb82383a2b8230",
         "signature": "8661959d0179e4d0c39ba70b7fe1b15016b9f04c059078817b597fadc6fd6ead",
         "affectsGlobalScope": false
       },
       "../src/utils/audiomodule.ts": {
-        "version": "ccdc162f7adb43bf2d835d9403b8d083f2b91d63e8a82ac97708a1e0aadaf46e",
-        "signature": "4fe1e139031a705d951be9159270393447ea931b38bc13ad110cacc1c9d18953",
+        "version": "60043f7d5aac0def0428f57c6ef48d2ac023f600d1dcd25c69144479c48d6a82",
+        "signature": "d34c850ca8cfbe20b4f831609be9836c552d5f7efb2901bf7170de0e5c28641a",
         "affectsGlobalScope": false
       },
       "../src/utils/is-keyboard-element.ts": {
@@ -271,13 +271,18 @@
         "signature": "079ed6b6463296bbba35395cfd3720d278ab487be723467171cb189a51bf2cc3",
         "affectsGlobalScope": false
       },
+      "../src/components/audiowave.tsx": {
+        "version": "1540492c14e0280c5b7959eb8d390e150eeed004acd25ee34c365405bee5c4cc",
+        "signature": "7a201129f0ac723f062841c08cbbfa9fb2bc32d5fb3980ebc556e6ed5f06c8a1",
+        "affectsGlobalScope": false
+      },
       "../src/components/audio.tsx": {
-        "version": "7009aa51577ed5f90b61367228792192f1aa716cd469468c225411f8c04e8180",
+        "version": "99c1437a5029ec5f7af70dc892d73e9b633bc53253597a49503b66b1f729e1d1",
         "signature": "c45cd2cb98431623e6fd5d573b5284003ea7b94cf41b0c3fe4634783e114a8f0",
         "affectsGlobalScope": false
       },
       "../src/components/footer.tsx": {
-        "version": "5e25c6f2533e213cc0cca816903b6f3650d16c2675d288d05cb47213584bb89a",
+        "version": "1017c693b2e60cc72b2687b53539e4e1de177f84fb95551111fa1dc4bbf86085",
         "signature": "f76a9e2389670fa57235480d22072d247de50499ee40469e7c8c9912e6ec4680",
         "affectsGlobalScope": false
       },
@@ -302,8 +307,8 @@
         "affectsGlobalScope": false
       },
       "../src/metadata.d.ts": {
-        "version": "21e80135e96cc203472f3db4a3d9478330a2a15d195de9965ee044d178a6ebff",
-        "signature": "21e80135e96cc203472f3db4a3d9478330a2a15d195de9965ee044d178a6ebff",
+        "version": "805b09c8be5b9cb55338c3057cb2fe551ec6d403f731e76dfcb2645e1a286bcf",
+        "signature": "805b09c8be5b9cb55338c3057cb2fe551ec6d403f731e76dfcb2645e1a286bcf",
         "affectsGlobalScope": true
       },
       "../types/post-message.d.ts": {
@@ -321,22 +326,22 @@
         "signature": "86efeb93caebf448f4ece0fa791f8b985e25ae5e7642aa12f6c4b8537e65b708",
         "affectsGlobalScope": false
       },
-      "../src/languages/ko-KR.ts": {
+      "../src/languages/ko-kr.ts": {
         "version": "c318048806ed5ea4b667b9a782dfe310d0721f000adecc9ad320fc0b03aa392a",
         "signature": "86efeb93caebf448f4ece0fa791f8b985e25ae5e7642aa12f6c4b8537e65b708",
         "affectsGlobalScope": false
       },
-      "../src/languages/zh-CN.ts": {
+      "../src/languages/zh-cn.ts": {
         "version": "d0de4c15ac727fae726394143b371beb6834d1ad82c7870508189f51541edfbd",
         "signature": "86efeb93caebf448f4ece0fa791f8b985e25ae5e7642aa12f6c4b8537e65b708",
         "affectsGlobalScope": false
       },
-      "../src/languages/zh-HK.ts": {
+      "../src/languages/zh-hk.ts": {
         "version": "572677ae505d688f8f322447507624675d3c975bef93f46d603212242c434d55",
         "signature": "86efeb93caebf448f4ece0fa791f8b985e25ae5e7642aa12f6c4b8537e65b708",
         "affectsGlobalScope": false
       },
-      "../src/languages/zh-TW.ts": {
+      "../src/languages/zh-tw.ts": {
         "version": "90b15604ccf423ed8b94f33e673ea474b65dbf87e7921a62e04a37b8dd5ed1e8",
         "signature": "86efeb93caebf448f4ece0fa791f8b985e25ae5e7642aa12f6c4b8537e65b708",
         "affectsGlobalScope": false
@@ -671,6 +676,11 @@
         "signature": "bc0442bf081aef1f744186372dc384f891ebdf7f3985a13788b7a7f65d353465",
         "affectsGlobalScope": true
       },
+      "../node_modules/@types/react-copy-to-clipboard/index.d.ts": {
+        "version": "9d16fe31b1c1bcff42296f94e620968fd51158c70a5c08bda1a2d03ae26ae094",
+        "signature": "9d16fe31b1c1bcff42296f94e620968fd51158c70a5c08bda1a2d03ae26ae094",
+        "affectsGlobalScope": false
+      },
       "../node_modules/@types/react-dom/index.d.ts": {
         "version": "8483a29c17f7feb768a1f4333cf12ccf1e7341bd89dadcf407e012d5315228d0",
         "signature": "8483a29c17f7feb768a1f4333cf12ccf1e7341bd89dadcf407e012d5315228d0",
@@ -708,6 +718,7 @@
       "moduleResolution": 2,
       "sourceMap": true,
       "incremental": true,
+      "allowSyntheticDefaultImports": true,
       "tsBuildInfoFile": "./lrc-maker.tsbuildinfo",
       "configFilePath": "../tsconfig.json"
     },
@@ -893,6 +904,9 @@
       "../node_modules/@types/node/zlib.d.ts": [
         "../node_modules/@types/node/stream.d.ts"
       ],
+      "../node_modules/@types/react-copy-to-clipboard/index.d.ts": [
+        "../node_modules/@types/react/index.d.ts"
+      ],
       "../node_modules/@types/react-dom/index.d.ts": [
         "../node_modules/@types/react/index.d.ts"
       ],
@@ -911,8 +925,8 @@
       ],
       "../src/components/app.context.tsx": [
         "../src/components/toast.tsx",
-        "../src/hooks/useLang.ts",
-        "../src/hooks/usePref.ts",
+        "../src/hooks/uselang.ts",
+        "../src/hooks/usepref.ts",
         "../src/lrc-parser.js/index.d.ts"
       ],
       "../src/components/app.tsx": [
@@ -925,12 +939,19 @@
       "../src/components/asidepanel.tsx": [
         "../src/components/svg.tsx",
         "../src/components/synchronizer.tsx",
-        "../src/hooks/useLrc.ts",
-        "../src/hooks/usePref.ts",
+        "../src/hooks/uselrc.ts",
+        "../src/hooks/usepref.ts",
         "../src/lrc-parser.js/index.d.ts",
         "../src/utils/lrc-file-name.ts"
       ],
       "../src/components/audio.tsx": [
+        "../src/components/audiowave.tsx",
+        "../src/components/loadaudio.tsx",
+        "../src/components/svg.tsx",
+        "../src/lrc-parser.js/index.d.ts",
+        "../src/utils/audiomodule.ts"
+      ],
+      "../src/components/audiowave.tsx": [
         "../src/components/loadaudio.tsx",
         "../src/components/svg.tsx",
         "../src/lrc-parser.js/index.d.ts",
@@ -944,8 +965,8 @@
         "../src/components/preferences.tsx",
         "../src/components/svg.img.tsx",
         "../src/components/synchronizer.tsx",
-        "../src/hooks/useLrc.ts",
-        "../src/hooks/usePref.ts",
+        "../src/hooks/uselrc.ts",
+        "../src/hooks/usepref.ts",
         "../src/lrc-parser.js/index.d.ts",
         "../src/utils/audiomodule.ts"
       ],
@@ -957,7 +978,7 @@
         "../src/components/app.context.tsx",
         "../src/components/svg.tsx",
         "../src/components/toast.tsx",
-        "../src/hooks/useLrc.ts",
+        "../src/hooks/uselrc.ts",
         "../src/lrc-parser.js/index.d.ts",
         "../src/utils/gistapi.ts",
         "../src/utils/lrc-file-name.ts"
@@ -975,7 +996,7 @@
         "../src/components/svg.img.tsx",
         "../src/components/svg.tsx",
         "../src/components/toast.tsx",
-        "../src/hooks/useLrc.ts",
+        "../src/hooks/uselrc.ts",
         "../src/utils/gistapi.ts"
       ],
       "../src/components/header.tsx": [
@@ -995,7 +1016,7 @@
       "../src/components/preferences.tsx": [
         "../src/components/app.context.tsx",
         "../src/components/svg.img.tsx",
-        "../src/hooks/usePref.ts",
+        "../src/hooks/usepref.ts",
         "../src/lrc-parser.js/index.d.ts",
         "../src/utils/sw.unregister.ts"
       ],
@@ -1003,8 +1024,8 @@
         "../src/components/app.context.tsx",
         "../src/components/asidepanel.tsx",
         "../src/components/curser.tsx",
-        "../src/hooks/useLrc.ts",
-        "../src/hooks/usePref.ts",
+        "../src/hooks/uselrc.ts",
+        "../src/hooks/usepref.ts",
         "../src/lrc-parser.js/index.d.ts",
         "../src/utils/audiomodule.ts",
         "../src/utils/is-keyboard-element.ts"
@@ -1014,12 +1035,12 @@
         "../src/utils/pubsub.ts"
       ],
       "../src/global.d.ts": [
-        "../src/languages/en-US.ts"
+        "../src/languages/en-us.ts"
       ],
-      "../src/hooks/useLang.ts": [
-        "../src/languages/en-US.ts"
+      "../src/hooks/uselang.ts": [
+        "../src/languages/en-us.ts"
       ],
-      "../src/hooks/useLrc.ts": [
+      "../src/hooks/uselrc.ts": [
         "../src/lrc-parser.js/index.d.ts"
       ],
       "../src/index.ts": [
@@ -1218,6 +1239,9 @@
       "../node_modules/@types/node/zlib.d.ts": [
         "../node_modules/@types/node/stream.d.ts"
       ],
+      "../node_modules/@types/react-copy-to-clipboard/index.d.ts": [
+        "../node_modules/@types/react/index.d.ts"
+      ],
       "../node_modules/@types/react-dom/index.d.ts": [
         "../node_modules/@types/react/index.d.ts"
       ],
@@ -1237,28 +1261,28 @@
       "../src/components/app.context.tsx": [
         "../node_modules/@types/prop-types/index.d.ts",
         "../node_modules/csstype/index.d.ts",
-        "../src/hooks/usePref.ts",
+        "../src/hooks/usepref.ts",
         "../src/lrc-parser.js/index.d.ts"
       ],
       "../src/components/asidepanel.tsx": [
         "../src/components/synchronizer.tsx",
-        "../src/hooks/useLrc.ts",
-        "../src/hooks/usePref.ts"
+        "../src/hooks/uselrc.ts",
+        "../src/hooks/usepref.ts"
       ],
       "../src/components/editor.tsx": [
-        "../src/hooks/useLrc.ts",
+        "../src/hooks/uselrc.ts",
         "../src/lrc-parser.js/index.d.ts"
       ],
       "../src/components/gist.tsx": [
-        "../src/hooks/useLrc.ts"
+        "../src/hooks/uselrc.ts"
       ],
       "../src/components/synchronizer.tsx": [
-        "../src/hooks/useLrc.ts"
+        "../src/hooks/uselrc.ts"
       ],
       "../src/global.d.ts": [
-        "../src/languages/en-US.ts"
+        "../src/languages/en-us.ts"
       ],
-      "../src/hooks/useLrc.ts": [
+      "../src/hooks/uselrc.ts": [
         "../src/lrc-parser.js/index.d.ts"
       ],
       "../src/lrc-parser.js/index.d.ts": [
@@ -1330,6 +1354,7 @@
       "../node_modules/@types/prettier/index.d.ts",
       "../node_modules/@types/prop-types/index.d.ts",
       "../node_modules/@types/q/index.d.ts",
+      "../node_modules/@types/react-copy-to-clipboard/index.d.ts",
       "../node_modules/@types/react-dom/index.d.ts",
       "../node_modules/@types/react/global.d.ts",
       "../node_modules/@types/react/index.d.ts",
@@ -1369,6 +1394,7 @@
       "../src/components/app.tsx",
       "../src/components/asidepanel.tsx",
       "../src/components/audio.tsx",
+      "../src/components/audiowave.tsx",
       "../src/components/content.tsx",
       "../src/components/curser.tsx",
       "../src/components/editor.tsx",
@@ -1383,16 +1409,16 @@
       "../src/components/synchronizer.tsx",
       "../src/components/toast.tsx",
       "../src/global.d.ts",
-      "../src/hooks/useLang.ts",
-      "../src/hooks/useLrc.ts",
-      "../src/hooks/usePref.ts",
+      "../src/hooks/uselang.ts",
+      "../src/hooks/uselrc.ts",
+      "../src/hooks/usepref.ts",
       "../src/index.ts",
-      "../src/languages/en-US.ts",
+      "../src/languages/en-us.ts",
       "../src/languages/ja.ts",
-      "../src/languages/ko-KR.ts",
-      "../src/languages/zh-CN.ts",
-      "../src/languages/zh-HK.ts",
-      "../src/languages/zh-TW.ts",
+      "../src/languages/ko-kr.ts",
+      "../src/languages/zh-cn.ts",
+      "../src/languages/zh-hk.ts",
+      "../src/languages/zh-tw.ts",
       "../src/lrc-parser.js/index.d.ts",
       "../src/metadata.d.ts",
       "../src/polyfill/details-summary.ts",

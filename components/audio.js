@@ -1,5 +1,6 @@
 import { convertTimeToTag } from "../lrc-parser.js";
 import { audioRef, audioStatePubSub, currentTimePubSub } from "../utils/audiomodule.js";
+import AudioWave from "./audiowave.js";
 import { loadAudioDialogRef } from "./loadaudio.js";
 import { Forward5sSVG, LoadAudioSVG, PauseSVG, PlaySVG, Replay5sSVG } from "./svg.js";
 const { useState, useEffect, useRef, useCallback, useMemo } = React;
@@ -89,6 +90,24 @@ export const LrcAudio = ({ lang }) => {
     const [paused, setPaused] = useState(audioRef.paused);
     const [duration, setDuration] = useState(audioRef.duration);
     useEffect(() => {
+        console.log('changed time...');
+        return currentTimePubSub.sub(self.current, (data) => {
+            if (audioRef.currentTime !== data) {
+                console.log('changed time', data);
+                audioRef.currentTime = data;
+            }
+        });
+    }, []);
+    useEffect(() => {
+        console.log('changed time...');
+        return audioStatePubSub.sub(self.current, (data) => {
+            if (data.type === 3) {
+                console.log('changed time2', data);
+                audioRef.currentTime = data.payload;
+            }
+        });
+    }, []);
+    useEffect(() => {
         return audioStatePubSub.sub(self.current, (data) => {
             switch (data.type) {
                 case 1: {
@@ -97,6 +116,7 @@ export const LrcAudio = ({ lang }) => {
                     break;
                 }
                 case 0: {
+                    console.log("xxxxxxxxxxxxxxxxxx", data);
                     setPaused(data.payload);
                     break;
                 }
@@ -105,9 +125,17 @@ export const LrcAudio = ({ lang }) => {
     }, []);
     const onReplay5s = useCallback(() => {
         audioRef.currentTime -= 5;
+        audioStatePubSub.pub({
+            type: 3,
+            payload: audioRef.currentTime
+        });
     }, []);
     const onForward5s = useCallback(() => {
         audioRef.currentTime += 5;
+        audioStatePubSub.pub({
+            type: 3,
+            payload: audioRef.currentTime
+        });
     }, []);
     const onPlayPauseToggle = useCallback(() => {
         audioRef.toggle();
@@ -115,15 +143,16 @@ export const LrcAudio = ({ lang }) => {
     const onLoadAudioButtonClick = useCallback(() => {
         loadAudioDialogRef.open();
     }, []);
-    return (React.createElement("section", { className: "lrc-audio" + (paused ? "" : " playing") },
-        React.createElement("button", { className: "ripple glow loadaudio-button", title: lang.audio.loadAudio, onClick: onLoadAudioButtonClick },
-            React.createElement(LoadAudioSVG, null)),
-        React.createElement("button", { className: "ripple glow", title: lang.audio.replay5s, onClick: onReplay5s, disabled: !duration },
-            React.createElement(Replay5sSVG, null)),
-        React.createElement("button", { className: "ripple glow", title: paused ? lang.audio.play : lang.audio.pause, disabled: !duration, onClick: onPlayPauseToggle }, paused ? React.createElement(PlaySVG, null) : React.createElement(PauseSVG, null)),
-        React.createElement("button", { className: "ripple glow", title: lang.audio.forward5s, onClick: onForward5s, disabled: !duration },
-            React.createElement(Forward5sSVG, null)),
-        React.createElement(TimeLine, { duration: duration, paused: paused }),
-        React.createElement(RateSlider, { lang: lang })));
+    return (React.createElement(React.Fragment, null,
+        React.createElement(AudioWave, { duration: duration, paused: paused }),
+        React.createElement("section", { className: "lrc-audio" + (paused ? "" : " playing") },
+            React.createElement("button", { className: "ripple glow loadaudio-button", title: lang.audio.loadAudio, onClick: onLoadAudioButtonClick },
+                React.createElement(LoadAudioSVG, null)),
+            React.createElement("button", { className: "ripple glow", title: lang.audio.replay5s, onClick: onReplay5s, disabled: !duration },
+                React.createElement(Replay5sSVG, null)),
+            React.createElement("button", { className: "ripple glow", title: paused ? lang.audio.play : lang.audio.pause, disabled: !duration, onClick: onPlayPauseToggle }, paused ? React.createElement(PlaySVG, null) : React.createElement(PauseSVG, null)),
+            React.createElement("button", { className: "ripple glow", title: lang.audio.forward5s, onClick: onForward5s, disabled: !duration },
+                React.createElement(Forward5sSVG, null)),
+            React.createElement(RateSlider, { lang: lang }))));
 };
 //# sourceMappingURL=audio.js.map

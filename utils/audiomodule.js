@@ -31,6 +31,12 @@ export const audioRef = {
             this.current.currentTime = time;
         }
     },
+    pause() {
+        var _a;
+        if (((_a = this.current) === null || _a === void 0 ? void 0 : _a.duration) && this.current.paused) {
+            this.current.pause();
+        }
+    },
     toggle() {
         var _a;
         if ((_a = this.current) === null || _a === void 0 ? void 0 : _a.duration) {

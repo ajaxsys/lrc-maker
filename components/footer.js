@@ -140,12 +140,16 @@ export const Footer = () => {
     return (React.createElement("footer", { className: "app-footer" },
         React.createElement("input", { id: "audio-input", type: "file", accept: accept, hidden: true, onChange: onAudioInputChange }),
         React.createElement(LoadAudio, { setAudioSrc: setAudioSrc, lang: lang }),
-        React.createElement("audio", { ref: audioRef, src: audioSrc, controls: prefState.builtInAudio, hidden: !prefState.builtInAudio, onLoadedMetadata: onAudioLoadedMetadata, onPlay: onAudioPlay, onPause: onAudioPause, onEnded: onAudioEnded, onTimeUpdate: onAudioTimeUpdate, onRateChange: onAudioRateChange, onError: onAudioError }),
+        React.createElement("audio", { ref: audioRef, src: audioSrc, muted: true, controls: prefState.builtInAudio, hidden: !prefState.builtInAudio, onLoadedMetadata: onAudioLoadedMetadata, onPlay: onAudioPlay, onPause: onAudioPause, onEnded: onAudioEnded, onTimeUpdate: onAudioTimeUpdate, onRateChange: onAudioRateChange, onError: onAudioError }),
         prefState.builtInAudio || React.createElement(LrcAudio, { lang: lang })));
 };
 const receiveFile = (file, setAudioSrc) => {
     sessionStorage.removeItem("audio-src");
     if (file) {
+        audioStatePubSub.pub({
+            type: 4,
+            payload: URL.createObjectURL(file),
+        });
         if (file.type.startsWith("audio/")) {
             setAudioSrc(URL.createObjectURL(file));
             return;

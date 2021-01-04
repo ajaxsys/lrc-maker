@@ -481,6 +481,11 @@
         "signature": "bc0442bf081aef1f744186372dc384f891ebdf7f3985a13788b7a7f65d353465",
         "affectsGlobalScope": true
       },
+      "../node_modules/@types/react-copy-to-clipboard/index.d.ts": {
+        "version": "9d16fe31b1c1bcff42296f94e620968fd51158c70a5c08bda1a2d03ae26ae094",
+        "signature": "9d16fe31b1c1bcff42296f94e620968fd51158c70a5c08bda1a2d03ae26ae094",
+        "affectsGlobalScope": false
+      },
       "../node_modules/@types/react-dom/index.d.ts": {
         "version": "8483a29c17f7feb768a1f4333cf12ccf1e7341bd89dadcf407e012d5315228d0",
         "signature": "8483a29c17f7feb768a1f4333cf12ccf1e7341bd89dadcf407e012d5315228d0",
@@ -518,6 +523,7 @@
       "moduleResolution": 2,
       "sourceMap": true,
       "incremental": true,
+      "allowSyntheticDefaultImports": true,
       "tsBuildInfoFile": "./lrc-parser.tsbuildinfo",
       "composite": true,
       "inlineSources": true,
@@ -704,6 +710,9 @@
       ],
       "../node_modules/@types/node/zlib.d.ts": [
         "../node_modules/@types/node/stream.d.ts"
+      ],
+      "../node_modules/@types/react-copy-to-clipboard/index.d.ts": [
+        "../node_modules/@types/react/index.d.ts"
       ],
       "../node_modules/@types/react-dom/index.d.ts": [
         "../node_modules/@types/react/index.d.ts"
@@ -904,6 +913,9 @@
       "../node_modules/@types/node/zlib.d.ts": [
         "../node_modules/@types/node/stream.d.ts"
       ],
+      "../node_modules/@types/react-copy-to-clipboard/index.d.ts": [
+        "../node_modules/@types/react/index.d.ts"
+      ],
       "../node_modules/@types/react-dom/index.d.ts": [
         "../node_modules/@types/react/index.d.ts"
       ],
@@ -987,6 +999,7 @@
       "../node_modules/@types/prettier/index.d.ts",
       "../node_modules/@types/prop-types/index.d.ts",
       "../node_modules/@types/q/index.d.ts",
+      "../node_modules/@types/react-copy-to-clipboard/index.d.ts",
       "../node_modules/@types/react-dom/index.d.ts",
       "../node_modules/@types/react/global.d.ts",
       "../node_modules/@types/react/index.d.ts",
