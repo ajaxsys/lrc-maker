@@ -62,7 +62,7 @@ typings/
 
 metadata.d.ts
 
-build/
+# build/
 build.es6/
 
 .vscode
