@@ -173,6 +173,7 @@ const Html = async () => {
                         return { href: "../src/index.css" };
                     })()}
                 />
+                <script src="https://unpkg.com/wavesurfer.js@4.3.0/dist/wavesurfer.js"></script>
             </head>
             <body>
                 <div className="app-container" />
@@ -223,7 +224,7 @@ const Html = async () => {
                         __html: reg.content,
                     }}
                 />
-                {/* <script src="https://unpkg.com/wavesurfer.js@4.3.0/dist/wavesurfer.js"></script> */}
+                <script src="https://unpkg.com/wavesurfer.js@4.3.0/dist/wavesurfer.js"></script>
                 <script {...appScript("./wavesurfer-4.3.0.js")} defer={true} />
 
             </body>
