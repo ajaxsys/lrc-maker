@@ -134,7 +134,7 @@ const AudioWave: React.FC<{ duration: number; paused: boolean }> = ({ duration, 
         <>
             
                 <div style={{paddingLeft: '0%', marginBottom: '0rem'}}>
-                    <span style={{color: 'white', cursor: 'pointer', padding: '1.5rem'}}
+                    <span style={{color: 'red', cursor: 'pointer', padding: '0 1.5rem'}}
                         onClick={() => ajustTime(currentTime + 0.1)}>＋0.1s ↑</span>
                     <br />
                     <input type="text" value={currentTime} style={{color: 'red', width: "8rem", height: "3rem", padding: "0.5rem", fontSize: "1.4rem"}}
@@ -151,7 +151,7 @@ const AudioWave: React.FC<{ duration: number; paused: boolean }> = ({ duration, 
                         */}
                     </input>
                     <br />
-                    <span style={{color: 'white', cursor: 'pointer', padding: '1.5rem'}}
+                    <span style={{color: 'blue', cursor: 'pointer', padding: '0 1.5rem'}}
                         onClick={() => ajustTime(currentTime - 0.1)}>ー0.1s ↓</span>
 
                 </div>
