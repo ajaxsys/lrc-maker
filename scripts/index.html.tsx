@@ -223,7 +223,8 @@ const Html = async () => {
                         __html: reg.content,
                     }}
                 />
-                <script src="https://unpkg.com/wavesurfer.js@4.3.0/dist/wavesurfer.js"></script>
+                {/* <script src="https://unpkg.com/wavesurfer.js@4.3.0/dist/wavesurfer.js"></script> */}
+                <script {...appScript("./wavesurfer-4.3.0.js")} defer={true} />
 
             </body>
         </html>
