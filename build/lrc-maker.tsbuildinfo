@@ -272,7 +272,7 @@
         "affectsGlobalScope": false
       },
       "../src/components/audiowave.tsx": {
-        "version": "1540492c14e0280c5b7959eb8d390e150eeed004acd25ee34c365405bee5c4cc",
+        "version": "6cd79f73977318321a1c20b28edfd74589449f9d37a567b71e8388557f26ef0d",
         "signature": "7a201129f0ac723f062841c08cbbfa9fb2bc32d5fb3980ebc556e6ed5f06c8a1",
         "affectsGlobalScope": false
       },

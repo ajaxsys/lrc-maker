@@ -78,13 +78,13 @@ const AudioWave = ({ duration, paused }) => {
     };
     return (React.createElement(React.Fragment, null,
         React.createElement("div", { style: { paddingLeft: '0%', marginBottom: '0rem' } },
-            React.createElement("span", { style: { color: 'white', cursor: 'pointer', padding: '1.5rem' }, onClick: () => ajustTime(currentTime + 0.1) }, "\uFF0B0.1s \u2191"),
+            React.createElement("span", { style: { color: 'red', cursor: 'pointer', padding: '1.5rem' }, onClick: () => ajustTime(currentTime + 0.1) }, "\uFF0B0.1s \u2191"),
             React.createElement("br", null),
             React.createElement("input", { type: "text", value: currentTime, style: { color: 'red', width: "8rem", height: "3rem", padding: "0.5rem", fontSize: "1.4rem" }, onChange: (e) => {
                     ajustTime(e.target.value);
                 } }),
             React.createElement("br", null),
-            React.createElement("span", { style: { color: 'white', cursor: 'pointer', padding: '1.5rem' }, onClick: () => ajustTime(currentTime - 0.1) }, "\u30FC0.1s \u2193")),
+            React.createElement("span", { style: { color: 'blue', cursor: 'pointer', padding: '1.5rem' }, onClick: () => ajustTime(currentTime - 0.1) }, "\u30FC0.1s \u2193")),
         React.createElement("div", { id: "waveform", style: { marginBottom: '1rem' } })));
 };
 export default AudioWave;
